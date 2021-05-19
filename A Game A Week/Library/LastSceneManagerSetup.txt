@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Game 1 - 2021-05-01/3DPNC.unity
+- path: Assets/Scenes/2021-05-19/Game 1 - 2DShooter.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
