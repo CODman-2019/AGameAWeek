@@ -14,7 +14,7 @@ public class Player_Movement_TopDown: MonoBehaviour
     public KeyCode _LeftKey, _altLeftKey;
     public KeyCode _RightKey, _altRightKey;
     
-    float speed_Multiplier;
+    float speed_Multiplier = 1;
     public float speed_Sprint;
     public KeyCode _Sprint;
 
