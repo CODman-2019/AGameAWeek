@@ -5,8 +5,7 @@ using UnityEngine;
 public class PhysicalBullets : MonoBehaviour
 {
     public float speed;
-
-
+    public int damageImpact;
     // Update is called once per frame
     void Update()
     {
@@ -15,11 +14,7 @@ public class PhysicalBullets : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player"))
-        {
-            Destroy(this.gameObject);
-            Bullet_ObjectPooling.bullet.RemoveBullet();
-        }
-
+        Bullet_ObjectPooling.bullet.RemoveBullet();
+        Destroy(this.gameObject);
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet_ObjectPooling : MonoBehaviour
 {
     public static Bullet_ObjectPooling bullet;
+
     private int maxBullets, currentBullets = 0;
 
     private void Awake()

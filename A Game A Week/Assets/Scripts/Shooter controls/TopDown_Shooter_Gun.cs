@@ -7,11 +7,12 @@ public class TopDown_Shooter_Gun : MonoBehaviour
 {
     public GameObject gun_Bullets;
     public Transform bullet_ExitPoint;
+    public int bullets = 10;
 
     // Start is called before the first frame update
     void Start()
     {
-        Bullet_ObjectPooling.bullet.SetBullets(10);
+        Bullet_ObjectPooling.bullet.SetBullets(bullets);
     }
 
     // Update is called once per frame

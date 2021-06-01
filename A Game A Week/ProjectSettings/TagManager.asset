@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Hit Box
   - Position
+  - Bullet
+  - PatrolPoint
   layers:
   - Default
   - TransparentFX
