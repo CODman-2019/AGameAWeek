@@ -8,6 +8,7 @@ TagManager:
   - Position
   - Bullet
   - PatrolPoint
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -5,12 +5,11 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int score;
-    private int health = 10;
+    public  int health = 10;
     public int damageImpact;
     private bool playerNear = false;
     private void CheckDamage()
     {
-
         if(health <= 0)
         {
             Death();
@@ -19,18 +18,12 @@ public class Enemy : MonoBehaviour
 
     private void Death()
     {
-        EnemyManager_TDS.enemySpawn.DecrementCounter();
         TDS_GameManager.manager.IncreaseScore(score);
+        EnemyManager_TDS.enemySpawn.DecrementCounter();
         Destroy(this.gameObject);
     }
 
-    private void Update()
-    {
-        if (playerNear)
-        {
 
-        }
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -38,6 +31,7 @@ public class Enemy : MonoBehaviour
         {
             case "Player":
                 other.gameObject.GetComponent<TDS_Player>().TakeDamage(damageImpact);
+                Death();
                 break;
             case "Bullet":
                 health -= other.gameObject.GetComponent<PhysicalBullets>().damageImpact;

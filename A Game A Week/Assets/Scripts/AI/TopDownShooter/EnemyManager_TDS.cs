@@ -10,35 +10,48 @@ public class EnemyManager_TDS : MonoBehaviour
     public GameObject enemy;
 
     private float timer;
-    private int enemyCount;
+    private int enemyCount = 0;
     private GameObject[] spawnPoints;
+    private bool activate;
+
+    public bool ActivateSpawner() => activate = true;
+    public bool DeactivateSpawner() => activate = false;
 
     void Awake()
     {
         enemySpawn = this;
         timer = Spawntime;
-        enemyCount = 0;
-
+        activate = false;
         spawnPoints = GameObject.FindGameObjectsWithTag("PatrolPoint");
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if(Time.time >= timer)
+        if(Time.time > timer && activate)
         {
-            timer += Spawntime;
-
-            if(enemyCount < enemyMax)
-            {
+            //if(enemyCount < enemyMax)
+            //{
                 int patrolPoint = Random.Range(0, spawnPoints.Length);
                 Transform position = spawnPoints[patrolPoint].transform;
                 Instantiate(enemy, position.position, Quaternion.identity);
-                enemyCount++;
-            }
+            //    enemyCount++;
+            //}
 
+            timer += Spawntime;
         }
+        else if(Time.time > timer) timer += Spawntime;
     }
 
-    public void DecrementCounter() { enemyCount--; }
+    public int DecrementCounter() {return enemyCount--; }
+
+    public void DestroyAllEnemys()
+    {
+        GameObject[] remaining = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach(GameObject enemy in remaining)
+        {
+            Destroy(enemy);
+        }
+    }
 }

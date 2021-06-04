@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy_Chaser : MonoBehaviour
 {
     private Transform player;
-
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +16,7 @@ public class Enemy_Chaser : MonoBehaviour
     void Update()
     {
         Look();
-        transform.Translate(Vector3.forward * 3 * Time.deltaTime);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
     private void Look()

@@ -34,4 +34,6 @@ public class GameMaster : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
     }
+    
+    public void ReturnToMainMenu() { SceneManager.LoadScene("Main Title Screen"); }
 }

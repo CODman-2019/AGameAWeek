@@ -19,6 +19,8 @@ public class TDS_Player : MonoBehaviour
         return health;
     } 
 
+    public void ResetHealth() { health = maxHealth; }
+
     public void CheckHealth()
     {
         if(health <= 0)
@@ -29,7 +31,8 @@ public class TDS_Player : MonoBehaviour
 
     private void Death()
     {
-
+        TDS_GameManager.manager.GetResults();
+        Destroy(this.gameObject);
     }
 
     public void TakeDamage(int damage)
