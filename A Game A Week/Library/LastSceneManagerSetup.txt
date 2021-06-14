@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Main Title Screen.unity
+- path: Assets/Scenes/2021-06-13/Game 1 - Walking Sim.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
