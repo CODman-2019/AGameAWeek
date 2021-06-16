@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/2021-06-13/Game 1 - Walking Sim.unity
+- path: Assets/Scenes/2021-05-19/Game 0 - 2DTopDownShooter.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
