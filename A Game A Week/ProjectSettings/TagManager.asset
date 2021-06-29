@@ -9,6 +9,9 @@ TagManager:
   - Bullet
   - PatrolPoint
   - Enemy
+  - Inspect
+  - Talk
+  - Travel
   layers:
   - Default
   - TransparentFX
