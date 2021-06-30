@@ -5,16 +5,17 @@ using UnityEngine.UI;
 
 public class Game3Mouse : MonoBehaviour
 {
+    public Sprite       sprite_Neutral;
     public Sprite       sprite_Investigate;
-    public Sprite       sprite_Walk;
+    public Sprite       sprite_Travel;
     public Sprite       sprite_Talk;
-    public Sprite       sprite_Select;
 
     
     // Start is called before the first frame update
     void Start()
     {
         Cursor.visible = false;
+        GetComponent<Image>().sprite = sprite_Neutral;
     }
 
     // Update is called once per frame
@@ -41,20 +42,23 @@ public class Game3Mouse : MonoBehaviour
         if (other.CompareTag("Talk"))
         {
             Debug.Log("Talking action");
+            GetComponent<Image>().sprite = sprite_Talk;
         }
         if (other.CompareTag("Inspect"))
         {
             Debug.Log("Inspection action");
+            GetComponent<Image>().sprite = sprite_Investigate;
         }
         if (other.CompareTag("Travel"))
         {
             Debug.Log("Travel action");
+            GetComponent<Image>().sprite = sprite_Travel;
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("Inspect Action");
-        GetComponent<Image>().sprite = sprite_Investigate;
+        Debug.Log("Neutral Action");
+        GetComponent<Image>().sprite = sprite_Neutral;
     }
 }
